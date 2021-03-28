@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>table th, table td {padding: 5px;}</style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>brand</th>
+        <th>transmission</th>
+        <th>color</th>
+    </tr>
+    <tr th:each="item : ${list}">
+        <td th:text="${item.getBrand()}">brand</td>
+        <td th:text="${item.getTransmission()}">transmission</td>
+        <td th:text="${item.getColor()}">color</td>
+    </tr>
+</table>
+<!--<th:block th:each="item, state : ${list}">-->
+<!--    <td th:utext="${state.size}">size</td>-->
+
+<!--    <h1 th:text="${item.getBrand()}"></h1>-->
+<!--</th:block>-->
+<!--<div>-->
+<!--    <p th:text="${list.toArray()}"/>-->
+<!--</div>-->
+</body>
+</html>
+
+<!--  Создайте сервис с методом, который будет возвращать указанное число машин из созданного списка.-->
+<!--  Создайте страницу cars.html. Реализуйте создание таблицы с машинами из сервиса с помощью thymeleaf.-->
